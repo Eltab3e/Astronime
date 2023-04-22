@@ -11,16 +11,16 @@
   justify-content: center;
 }
 
-a {
+.link {
   color: #576cbc;
 }
 
-a,
-a:link,
-a:visited {
+.link,
+.link:link,
+.link:visited {
   text-decoration: none;
 }
 
-a:hover {
-  color: #000;
+.link:hover {
+  color: #fbc638;
 }

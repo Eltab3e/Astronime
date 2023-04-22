@@ -6,16 +6,16 @@ const Nav = () => {
     <nav className={classes.nav}>
       <ul className={classes.list}>
         <li className={classes.item}>
-          <a href='/'>Home</a>
+          <a href='/home' className={classes.link}>Home</a>
         </li>
         <li className={classes.item}>
-          <a href='/'>Most Popular</a>
+          <a href='/most-popular' className={classes.link}>Most Popular</a>
         </li>
         <li className={classes.item}>
-          <a href='/'>Anime Recommendations</a>
+          <a href='/anime-recommendations' className={classes.link}>Anime Recommendations</a>
         </li>
         <li className={classes.item}>
-          <a href='/'>About</a>
+          <a href='/about' className={classes.link}>About</a>
         </li>
       </ul>
     </nav>
