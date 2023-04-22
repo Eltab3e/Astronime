@@ -1,0 +1,26 @@
+.nav {
+  font-family: 'Bruno Ace SC', cursive;
+  font-size: 18px;
+}
+
+.list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: #576cbc;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
