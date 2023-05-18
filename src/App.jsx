@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
-import Footer from './components/Footer/Footer';
-import Anime from './pages/Anime';
-import Home from './pages/Home';
-import Intro from './pages/Intro';
-import MostPopular from './pages/MostPopular';
-import AnimeRecommendations from './pages/AnimeRecommendations';
-import About from './pages/About';
+
+const AnimeDetailsPage = lazy(() => import('./pages/AnimeDetailsPage'));
+const HomePage = lazy(() => import('./pages/HomePage'));
+const IntroPage = lazy(() => import('./pages/IntroPage'));
+const PopularPage = lazy(() => import('./pages/PopularPage'));
+const SearchPage = lazy(() => import('./pages/SearchPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const Page404 = lazy(() => import('./pages/Page404'));
+
+import Loading from './components/Loading/Loading';
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Intro />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/most-popular' element={<MostPopular />} />
-        <Route
-          path='/anime-recommendations'
-          element={<AnimeRecommendations />}
-        />
-        <Route path='/about' element={<About />} />
-        <Route path='/anime/:id' element={<Anime />} />
-      </Routes>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path='/' element={<IntroPage />} />
+          <Route path='/home' element={<HomePage />} />
+          <Route path='/most-popular' element={<PopularPage />} />
+          <Route path='/search' element={<SearchPage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/anime/:animeID' element={<AnimeDetailsPage />} />
+          <Route path='/*' element={<Page404 />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

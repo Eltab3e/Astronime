@@ -1,0 +1,109 @@
+/**************GENERAL****************/
+.navbar {
+  font-family: 'Bruno Ace SC', cursive;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  font-size: 20px;
+  z-index: 9999;
+}
+
+/**************LOGO****************/
+.logo_wrap {
+  display: flex;
+}
+
+.logo_img {
+  width: 60px;
+  height: 30px;
+}
+
+/**************HAMBURGER MENU****************/
+.menu_icon {
+  display: none;
+  background-color: #ff7a00;
+  height: 30px;
+  width: 30px;
+  border: none;
+}
+
+.menu_icon:hover {
+  background-color: #ffbc7d;
+}
+
+/**************LINKS****************/
+.item a,
+.item a:link,
+.item a:visited {
+  text-decoration: none;
+  color: #576cbc;
+}
+
+.item a:hover {
+  color: #ff7a00;
+}
+
+.item a.active,
+.item a.active:link,
+.item a.active:visited {
+  text-decoration: none;
+  color: #ff7a00;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  list-style-type: none;
+}
+
+.space {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    gap: 18rem;
+  }
+
+  .menu_icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navigation {
+    position: absolute;
+    right: 0;
+    top: 75px;
+    width: 0px;
+    height: calc(100vh - 75px);
+    background: hsla(0, 0%, 0%, 0.5);
+    backdrop-filter: blur(0.5rem);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .active {
+    width: 100%;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item {
+    margin-top: 50px;
+  }
+
+  .space {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    gap: 12rem;
+  }
+}
